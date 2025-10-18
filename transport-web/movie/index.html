@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Theater</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        header { background: #9b59b6; color: white; padding: 40px; text-align: center; }
+        h1 { margin-bottom: 10px; }
+        .movie-list { margin-top: 30px; }
+        .movie-item { background: white; padding: 20px; margin: 10px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .back-btn { background: #34495e; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎬 Movie Theater</h1>
+        <p>Latest movies and showtimes</p>
+    </header>
+    <div class="container">
+        <div class="movie-list">
+            <div class="movie-item">
+                <h3>Avengers: Endgame</h3>
+                <p>Showtimes: 2:00 PM, 5:00 PM, 8:00 PM</p>
+                <p>Duration: 3h 1m</p>
+            </div>
+            <div class="movie-item">
+                <h3>The Lion King</h3>
+                <p>Showtimes: 1:00 PM, 4:00 PM, 7:00 PM</p>
+                <p>Duration: 1h 58m</p>
+            </div>
+        </div>
+        <a href="/" class="back-btn">← Back to Home</a>
+    </div>
+</body>
+</html>

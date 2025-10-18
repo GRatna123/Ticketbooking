@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport & Entertainment Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .bus { color: #e74c3c; }
+        .movie { color: #9b59b6; }
+        .train { color: #3498db; }
+        
+        h2 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        p {
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn-bus { background: #e74c3c; }
+        .btn-movie { background: #9b59b6; }
+        .btn-train { background: #3498db; }
+        
+        .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Transport & Entertainment Hub</h1>
+            <p class="subtitle">Your one-stop solution for travel and entertainment</p>
+        </header>
+        
+        <div class="services-grid">
+            <!-- Bus Service -->
+            <div class="service-card" onclick="navigateToService('bus')">
+                <div class="service-icon bus">🚌</div>
+                <h2>Bus Services</h2>
+                <p>Find the best bus routes, schedules, and book your tickets online. Comfortable and affordable travel options.</p>
+                <button class="btn btn-bus" onclick="event.stopPropagation(); navigateToService('bus')">
+                    Explore Buses
+                </button>
+            </div>
+            
+            <!-- Movie Service -->
+            <div class="service-card" onclick="navigateToService('movie')">
+                <div class="service-icon movie">🎬</div>
+                <h2>Movie Theater</h2>
+                <p>Discover the latest movies, showtimes, and book your tickets. Enjoy the ultimate cinema experience.</p>
+                <button class="btn btn-movie" onclick="event.stopPropagation(); navigateToService('movie')">
+                    Browse Movies
+                </button>
+            </div>
+            
+            <!-- Train Service -->
+            <div class="service-card" onclick="navigateToService('train')">
+                <div class="service-icon train">🚆</div>
+                <h2>Train Services</h2>
+                <p>Check train schedules, routes, and book your journey. Fast and reliable rail services.</p>
+                <button class="btn btn-train" onclick="event.stopPropagation(); navigateToService('train')">
+                    View Trains
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Transport & Entertainment Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function navigateToService(service) {
+            window.location.href = `/${service}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  # Main web application with all services
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    container_name: transport-web
+    restart: unless-stopped
+    networks:
+      - transport-network
+
+  # Individual bus service (optional - can run separately)
+  bus-service:
+    build: ./bus
+    ports:
+      - "8081:80"
+    container_name: bus-service
+    restart: unless-stopped
+    networks:
+      - transport-network
+
+  # Individual movie service (optional - can run separately)
+  movie-service:
+    build: ./movie
+    ports:
+      - "8082:80"
+    container_name: movie-service
+    restart: unless-stopped
+    networks:
+      - transport-network
+
+  # Individual train service (optional - can run separately)
+  train-service:
+    build: ./train
+    ports:
+      - "8083:80"
+    container_name: train-service
+    restart: unless-stopped
+    networks:
+      - transport-network
+
+networks:
+  transport-network:
+    driver: bridge
+
+volumes:
+  nginx-data:
+    driver: local
